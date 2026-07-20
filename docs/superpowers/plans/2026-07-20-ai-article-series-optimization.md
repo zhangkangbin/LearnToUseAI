@@ -13,9 +13,9 @@
 ### Task 1: 建立三篇文章的系列导航
 
 **Files:**
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently.md:3`
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-advanced.md:3`
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-mastery.md:3`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-基础篇.md:3`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-进阶篇.md:3`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-精通篇.md:3`
 
 - [ ] 增加“适合谁、前置能力、完成后可交付成果、下一篇”的阅读导航和目录链接。
 - [ ] 使用 `rg -n '^## ' -g '*.md'` 验证三篇的顶级章节可发现。
@@ -23,8 +23,8 @@
 ### Task 2: 强化基础篇的可执行性与安全边界
 
 **Files:**
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently.md:111`
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently.md:615`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-基础篇.md:111`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-基础篇.md:615`
 
 - [ ] 将提示词框架扩充为任务、材料、受众、格式、约束、验收与核查。
 - [ ] 新增端到端案例和模板使用说明。
@@ -33,8 +33,8 @@
 ### Task 3: 以工作流重构进阶篇主线
 
 **Files:**
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-advanced.md:15`
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-advanced.md:249`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-进阶篇.md:15`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-进阶篇.md:249`
 
 - [ ] 在文章前部定义统一的七步工作流和每步产出。
 - [ ] 增加“输入—追问—审核—交付—沉淀”的端到端案例与验收标准。
@@ -43,9 +43,9 @@
 ### Task 4: 提升精通篇的质量与协作系统内容
 
 **Files:**
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-mastery.md:67`
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-mastery.md:529`
-- Modify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-mastery.md:564`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-精通篇.md:67`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-精通篇.md:529`
+- Modify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-精通篇.md:564`
 
 - [ ] 增加质量门、版本与责任边界、团队协作和使用指标的可操作说明。
 - [ ] 将隐私章节扩展为数据分级、脱敏、授权与工具设置检查。
@@ -54,9 +54,9 @@
 ### Task 5: 结构与覆盖验证
 
 **Files:**
-- Verify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently.md`
-- Verify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-advanced.md`
-- Verify: `E:\KangWorkInfo\LearnToUseAI\ordinary-people-use-ai-efficiently-mastery.md`
+- Verify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-基础篇.md`
+- Verify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-进阶篇.md`
+- Verify: `E:\KangWorkInfo\LearnToUseAI\普通人如何高效使用AI-精通篇.md`
 
 - [ ] 用 PowerShell 检查三篇文件为 UTF-8、所有代码围栏成对出现、标题层级存在。
 - [ ] 用 `rg` 核查每篇均含导航、目录、案例、验收、安全或核查、下一步行动。

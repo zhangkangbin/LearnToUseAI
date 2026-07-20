@@ -761,3 +761,5 @@ AI 的入门靠尝试，进阶靠流程，精通靠系统。
 ## 延伸学习：把工作流连接到真实能力
 
 本篇聚焦通用的工作流、质量与责任体系。若你希望进一步学习如何把这些方法落到可复用流程、外部工具连接和受控业务操作，请阅读专题：[AI 能力系统：Skill、MCP 与 Function Calling](./ai-capability-system/README.md)。建议按 Skill、MCP、Function Calling、端到端案例的顺序阅读，并始终从只读、最小权限和人工确认开始。
+
+完成该专题后，可继续进入 [高级 AI 系统学习路线](./advanced-ai-system/README.md)，系统学习上下文工程、Structured Outputs、RAG、Evals、Tracing、多智能体、Computer Use、Realtime Agent、模型适配与 AI 治理等 28 个主题。
