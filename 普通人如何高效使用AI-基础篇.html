@@ -1,0 +1,351 @@
+<!doctype html><html lang="zh-CN" data-theme="system"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>普通人如何高效使用 AI｜AI 学习系列</title>
+<style>
+:root{--bg:#f7f8fb;--surface:#fff;--text:#202633;--muted:#667085;--line:#e4e7ec;--accent:#255fce;--code:#f1f4f8;--shadow:0 12px 35px rgba(25,35,55,.08)}
+html[data-theme="dark"]{--bg:#111827;--surface:#1c2433;--text:#e6eaf0;--muted:#aeb7c5;--line:#344054;--accent:#86b4ff;--code:#151d29;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.85 ui-sans-serif,system-ui,"Microsoft YaHei",sans-serif}.progress{height:3px;background:transparent;position:fixed;z-index:10;inset:0 0 auto}.progress i{display:block;width:0;height:100%;background:var(--accent)}
+.topbar{height:64px;display:flex;gap:12px;align-items:center;padding:0 max(20px,calc((100vw - 1240px)/2));border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);position:sticky;top:0;z-index:5}.brand{font-weight:750;color:var(--text);text-decoration:none;margin-right:auto}.topbar button{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:6px 10px;cursor:pointer}.theme-switcher{display:flex;gap:4px}.theme-switcher button.active{background:var(--accent);border-color:var(--accent);color:white}
+.layout{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:260px minmax(0,1fr);gap:44px;padding:38px 28px 72px}.toc{position:sticky;top:92px;align-self:start;max-height:calc(100vh - 115px);overflow:auto;padding-right:14px}.toc h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}.toc a{display:block;color:var(--muted);text-decoration:none;font-size:14px;padding:5px 8px;border-left:2px solid transparent}.toc a[data-level="3"]{padding-left:20px;font-size:13px}.toc a.active{color:var(--accent);border-color:var(--accent);font-weight:700}
+article{max-width:760px;min-width:0}article h1{font-size:2.25rem;line-height:1.3;margin:0 0 1.15rem;letter-spacing:-.03em}article h2{font-size:1.5rem;line-height:1.4;margin:3.2rem 0 1rem;padding-top:.25rem}article h3{font-size:1.13rem;margin:2rem 0 .7rem}article p,article li{overflow-wrap:anywhere}article a{color:var(--accent)}article blockquote{margin:1.4rem 0;padding:.7rem 1rem;border-left:4px solid var(--accent);background:var(--surface);color:var(--muted)}article pre{overflow:auto;background:var(--code);padding:16px;border-radius:10px;line-height:1.65}article code{font-family:ui-monospace,Consolas,monospace;background:var(--code);padding:.1em .3em;border-radius:4px}article pre code{padding:0;background:transparent}table{display:block;overflow:auto;border-collapse:collapse;max-width:100%}th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}th{background:var(--code)}
+.article-nav{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:54px;padding-top:24px}.article-nav a{background:var(--surface);box-shadow:var(--shadow);border-radius:10px;padding:12px 16px;text-decoration:none;max-width:48%}.article-nav a:last-child{text-align:right;margin-left:auto}.article-nav span{display:block;color:var(--muted);font-size:12px}.home{max-width:1000px;margin:0 auto;padding:70px 28px}.home h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.2;max-width:720px}.lead{color:var(--muted);font-size:1.13rem;max-width:680px}.sequence{color:var(--accent);font-weight:700;margin:2rem 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{display:block;padding:24px;border-radius:14px;background:var(--surface);box-shadow:var(--shadow);color:var(--text);text-decoration:none;border:1px solid var(--line)}.card:hover{border-color:var(--accent);transform:translateY(-2px)}.card span{color:var(--accent);font-size:13px;font-weight:700}.card h2{margin:.45rem 0;font-size:1.35rem}.card p{color:var(--muted);margin:0}
+@media(max-width:760px){.topbar{height:auto;min-height:58px;padding:8px 16px;flex-wrap:wrap}.theme-switcher{margin-left:auto}.layout{display:block;padding:26px 18px 56px}.toc{display:none;position:fixed;z-index:8;top:66px;left:12px;right:12px;max-height:70vh;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}.toc.open{display:block}.cards{grid-template-columns:1fr}.home{padding:44px 20px}.article-nav{font-size:14px}}
+</style>
+</head><body><div class="progress"><i id="progressBar"></i></div><header class="topbar"><a class="brand" href="index.html">AI 学习系列</a><button id="tocToggle" aria-label="打开目录">目录</button><div class="theme-switcher" aria-label="主题切换"><button data-theme-choice="light">浅色</button><button data-theme-choice="dark">深色</button><button data-theme-choice="system">系统</button></div></header><div class="layout"><aside class="toc"><nav id="tocNav"></nav></aside><main><article><h1 id="普通人如何高效使用-AI">普通人如何高效使用 AI</h1>
+<h2 id="前言">前言</h2>
+<p>AI 正在变成一种新的基础工具。它不像搜索引擎那样只帮我们找到信息，也不像传统软件那样只能按照固定按钮完成固定动作。AI 更像一个可以对话的助手：你可以让它帮你解释概念、整理资料、生成方案、修改文字、规划任务，甚至陪你练习表达和思考。</p>
+<p>但很多人第一次使用 AI 时，会遇到一个共同问题：明明知道它很强，却不知道该怎么问，也不知道它适合帮自己做什么。结果不是问得太宽泛，就是把 AI 的回答直接当成最终答案，最后效果并不稳定。</p>
+<p>这篇文章面向普通用户，不要求懂技术，也不假设你已经熟悉各种 AI 工具。我们重点讨论一个问题：怎样把 AI 真正用到学习、工作和生活中，让它提高效率，而不是制造更多困惑。</p>
+<h2 id="阅读导航">阅读导航</h2>
+<p><strong>适合谁：</strong> 第一次使用 AI，或只会偶尔提问、还不能稳定得到可用结果的人。</p>
+<p><strong>读前准备：</strong> 选择一个可安全提供材料的小任务，例如整理会议笔记、写邮件或制定一周计划；不要上传个人、客户或公司敏感资料。</p>
+<p><strong>读完后的成果：</strong> 你能把一个任务说清楚、通过追问改出可用初稿，并按检查清单完成一次人工核查。</p>
+<p><strong>系列位置：</strong> 本篇解决“做好一个任务”；完成后可阅读《进阶版》，学习把多个任务串成稳定工作流。</p>
+<blockquote><strong>适用范围与更新：</strong> 本文更新于 2026-07-20，采用与具体产品无关的方法。工具功能、联网能力、数据留存和隐私设置会变化；使用前请以所用工具的官方说明、组织制度和原始资料为准。风险识别可参考 <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI 风险管理框架</a>，但它不能替代你所在地区或组织的规定。</blockquote>
+<h2 id="本文地图">本文地图</h2>
+<ol><li>认识 AI 的作用与边界；</li><li>学会提问、改写、总结、生成和追问；</li><li>用结构化指令说明任务；</li><li>通过模板处理学习、文档、办公、创作与技术问题；</li><li>在发布或执行前完成事实、隐私和场景核查。</li></ol>
+<p>---</p>
+<h2 id="第-1-章-为什么现在每个人都应该学会使用-AI">第 1 章：为什么现在每个人都应该学会使用 AI</h2>
+<p>过去，很多工具只属于专业人士。设计软件属于设计师，编程工具属于程序员，数据分析工具属于分析师。但 AI 的特别之处在于，它降低了很多能力的使用门槛。只要你能用自然语言描述自己的需求，就可以开始借助 AI 完成一些原本需要专业技能、经验或大量时间才能完成的事情。</p>
+<p>对普通人来说，学习使用 AI 的价值主要体现在三个方面。</p>
+<p>第一，它能节省时间。比如，你需要阅读一份长文档，AI 可以先帮你提炼重点；你需要写一封邮件，AI 可以先帮你搭出初稿；你需要准备一次汇报，AI 可以帮你梳理结构和表达顺序。它不一定替你完成全部工作，但能帮你跨过最耗时间的起步阶段。</p>
+<p>第二，它能提升思考质量。很多时候，我们不是没有想法，而是想法散乱。AI 可以帮你把模糊的问题拆开，把不同方案并排比较，把一个结论背后的理由说清楚。你可以把它当成一个随时在线的讨论对象，让它帮助你反复推敲。</p>
+<p>第三，它能扩展个人能力边界。不会写代码的人，可以让 AI 帮忙解释代码逻辑；不擅长写作的人，可以让 AI 帮忙润色文字；不熟悉某个行业的人，可以让 AI 先讲清楚基本概念。AI 不能让人一夜之间成为专家，但它可以让普通人更快进入一个陌生领域。</p>
+<p>不过，AI 并不是万能答案机器。它会出错，会编造，也可能误解你的意图。真正高效的人，不是把 AI 当成权威，而是把它当成辅助自己思考和执行的工具。</p>
+<h3 id="例子-下班前-30-分钟处理杂事">例子：下班前 30 分钟处理杂事</h3>
+<p>假设你快下班了，还有三件事没处理：回复客户邮件、整理会议要点、安排明天的工作。你可以先把零散信息发给 AI，让它帮你生成邮件初稿、会议纪要结构和明日任务清单。你再花时间检查事实、调整语气、决定优先级。这样 AI 负责“起草和整理”，你负责“判断和确认”，半小时内就能把原本很散的工作收束起来。</p>
+<p>---</p>
+<h2 id="第-2-章-AI-工具的基本使用方式">第 2 章：AI 工具的基本使用方式</h2>
+<p>普通人使用 AI，最常见的方式就是对话。你输入一个问题、任务或材料，AI 根据你的内容生成回答。看起来很简单，但想用得好，需要理解几个基本动作。</p>
+<h3 id="1-提问">1. 提问</h3>
+<p>提问是最基础的用法。比如：</p>
+<pre><code class="language-text">请用通俗语言解释什么是人工智能。</code></pre>
+<p>这种问题适合用来了解概念、学习新知识、获取思路。提问时越具体，回答通常越有用。</p>
+<h3 id="2-改写">2. 改写</h3>
+<p>你可以把已有文字交给 AI，让它变得更清晰、更正式、更简洁或更适合某个场景。</p>
+<pre><code class="language-text">请把下面这段话改得更适合发给客户，语气礼貌但不要太生硬。</code></pre>
+<p>改写类任务很适合邮件、通知、总结、汇报、简历、自我介绍等场景。</p>
+<h3 id="3-总结">3. 总结</h3>
+<p>当你有一段很长的内容时，可以让 AI 帮你提炼重点。</p>
+<pre><code class="language-text">请总结下面这篇文章的核心观点，并列出 5 条要点。</code></pre>
+<p>总结可以节省阅读时间，但重要内容仍然需要你自己复核，尤其是合同、政策、财务、医学等严肃材料。</p>
+<h3 id="4-生成">4. 生成</h3>
+<p>AI 可以帮你从零开始生成文本，比如文章大纲、活动方案、学习计划、会议纪要模板等。</p>
+<pre><code class="language-text">请帮我写一个关于时间管理的分享大纲，面向刚入职的新人。</code></pre>
+<p>生成内容适合作为初稿，不适合不加判断地直接使用。</p>
+<h3 id="5-追问">5. 追问</h3>
+<p>高效使用 AI 的关键不是一次问完，而是持续追问。你可以让它补充、调整、解释、比较、举例。</p>
+<pre><code class="language-text">这个回答太抽象了，请举一个生活中的例子。</code></pre>
+<p>真正好用的 AI 对话，往往不是“一问一答”，而是“不断打磨”。</p>
+<h3 id="例子-从一句话到可用邮件">例子：从一句话到可用邮件</h3>
+<p>你可以先输入：</p>
+<pre><code class="language-text">帮我写一封邮件，提醒同事明天下午 3 点开会。</code></pre>
+<p>如果第一版太简单，可以继续追问：</p>
+<pre><code class="language-text">请补充会议主题、参会准备事项，语气自然一点，不要太正式。</code></pre>
+<p>如果还不满意，再继续调整：</p>
+<pre><code class="language-text">请压缩到 120 字以内，并把重点事项列成 3 条。</code></pre>
+<p>这就是 AI 的常见使用节奏：先生成，再补充，再压缩，再确认。</p>
+<p>---</p>
+<h2 id="第-3-章-提问的核心方法-角色-背景-目标-格式">第 3 章：提问的核心方法：角色、背景、目标、格式</h2>
+<p>很多人觉得 AI 回答不好，其实不是 AI 完全不行，而是问题给得太模糊。比如只输入“帮我写一篇文章”，AI 很难知道你要写给谁、写多长、什么语气、什么用途。</p>
+<p>一个好提示词，通常包含四个要素：角色、背景、目标、格式。对于需要真正交付的任务，再补上“材料、约束、验收、核查”四项，效果会更稳定。</p>
+<h3 id="先用这张任务说明卡">先用这张任务说明卡</h3>
+<p>不必每次都把提示词写得很长，但至少想清楚下面七件事：</p>
+<ul><li><strong>任务：</strong> 要 AI 做什么，而不是只说一个主题；</li><li><strong>材料：</strong> 它可以依据哪些原文、数据或事实；</li><li><strong>受众：</strong> 成品给谁看、用在什么场景；</li><li><strong>输出：</strong> 需要邮件、表格、清单还是大纲，长度是多少；</li><li><strong>约束：</strong> 哪些内容不能改、不能编、不能透露；</li><li><strong>验收：</strong> 什么样才算可用，例如“可在 3 分钟内讲完”；</li><li><strong>核查：</strong> 哪些数字、日期、引用或结论必须由人确认。</li></ul>
+<h3 id="1-角色-希望-AI-以什么身份回答">1. 角色：希望 AI 以什么身份回答</h3>
+<p>角色可以帮助 AI 调整回答角度。</p>
+<pre><code class="language-text">请你作为一名有经验的职场导师，帮我分析这个问题。</code></pre>
+<p>不同角色会带来不同风格。比如“老师”更注重解释，“编辑”更注重表达，“产品经理”更注重结构和用户需求。</p>
+<h3 id="2-背景-告诉-AI-当前情况">2. 背景：告诉 AI 当前情况</h3>
+<p>背景越清楚，回答越贴近实际。</p>
+<pre><code class="language-text">我是一名刚毕业的职场新人，下周要做一次 5 分钟的部门分享，主题是如何使用 AI 提高工作效率。</code></pre>
+<p>如果没有背景，AI 只能给出泛泛而谈的建议。</p>
+<h3 id="3-目标-明确你想得到什么结果">3. 目标：明确你想得到什么结果</h3>
+<p>目标要尽量具体。</p>
+<pre><code class="language-text">请帮我生成一份适合演讲使用的大纲，内容要简单、实用、有例子。</code></pre>
+<p>目标可以包括用途、受众、长度、风格、重点等。</p>
+<h3 id="4-格式-告诉-AI-如何输出">4. 格式：告诉 AI 如何输出</h3>
+<p>格式能减少后续整理成本。</p>
+<pre><code class="language-text">请用 Markdown 格式输出，包含标题、三级小标题和项目符号列表。</code></pre>
+<p>你也可以要求它输出表格、清单、步骤、JSON、邮件格式、PPT 大纲等。</p>
+<h3 id="5-一个完整示例">5. 一个完整示例</h3>
+<pre><code class="language-text">请你作为一名职场效率顾问，帮我写一份关于“普通人如何使用 AI 提高工作效率”的文章大纲。
+
+背景：读者是没有技术背景的普通职场人。
+目标：让他们看完后知道 AI 可以做什么，以及如何开始使用。
+要求：语言通俗，结构清晰，避免太多专业术语。
+格式：使用 Markdown，包含 8 到 10 个章节标题，每章附一句内容说明。</code></pre>
+<p>这个提示词比“帮我写 AI 文章”更容易得到可用结果，因为它把使用场景讲清楚了。</p>
+<h3 id="例子-把模糊需求改成清晰提示词">例子：把模糊需求改成清晰提示词</h3>
+<p>模糊提问：</p>
+<pre><code class="language-text">帮我做个学习计划。</code></pre>
+<p>更清晰的提问：</p>
+<pre><code class="language-text">我想在 30 天内入门 Excel 数据分析。
+我每天晚上有 1 小时，基础是会做简单表格，但不会函数和透视表。
+请帮我制定一个学习计划，每周一个阶段，每天安排具体任务，并给出练习建议。</code></pre>
+<p>两者的区别在于，后者告诉了 AI：学习目标、当前基础、时间限制、输出格式和期望结果。</p>
+<h3 id="输出前的-60-秒验收">输出前的 60 秒验收</h3>
+<p>AI 给出结果后，不要马上复制。先问自己：它是否回答了任务？是否遗漏材料中的关键信息？语气和格式是否适合受众？是否把猜测写成了事实？是否仍含有不该出现的敏感信息？任一项不通过，就带着具体问题继续追问。</p>
+<p>---</p>
+<h2 id="第-4-章-常用提示词模板">第 4 章：常用提示词模板</h2>
+<p>模板不是为了限制思考，而是帮助你更快开始。下面这些模板可以直接复制，再根据自己的情况修改。</p>
+<h3 id="模板怎么用才不会变成-复制即交付">模板怎么用才不会变成“复制即交付”</h3>
+<p>每次使用下面的模板，都做四步：先替换方括号中的内容；再粘贴可公开或已脱敏的材料；拿到初稿后依据“输出前的 60 秒验收”追问；最后由你确认事实、责任人和最终语气。模板负责让你更快开始，人工核查负责让结果可以使用。</p>
+<h3 id="1-学习解释模板">1. 学习解释模板</h3>
+<pre><code class="language-text">请用通俗易懂的语言解释【概念】。
+要求：
+1. 先用一句话说明它是什么；
+2. 再用一个生活例子解释；
+3. 最后列出我需要记住的 3 个关键点。</code></pre>
+<p>适合学习新概念、新行业、新工具。</p>
+<h3 id="2-总结提炼模板">2. 总结提炼模板</h3>
+<pre><code class="language-text">请总结下面这段内容。
+要求：
+1. 提炼核心观点；
+2. 列出重要细节；
+3. 标出可能需要进一步确认的信息；
+4. 用简洁的中文输出。
+
+内容如下：
+【粘贴内容】</code></pre>
+<p>适合阅读文章、会议记录、报告材料。</p>
+<h3 id="3-写作初稿模板">3. 写作初稿模板</h3>
+<pre><code class="language-text">请帮我写一份【文档类型】。
+背景：【说明使用场景】
+受众：【说明给谁看】
+目标：【说明希望达成什么效果】
+语气：【正式/自然/亲切/简洁】
+长度：【大约多少字】
+格式：【邮件/文章/通知/清单/Markdown】</code></pre>
+<p>适合邮件、通知、文章、说明文档、工作汇报。</p>
+<h3 id="4-修改润色模板">4. 修改润色模板</h3>
+<pre><code class="language-text">请帮我润色下面这段文字。
+要求：
+1. 保留原意；
+2. 让表达更清楚；
+3. 语气更自然；
+4. 不要写得过度夸张。
+
+原文：
+【粘贴内容】</code></pre>
+<p>适合提升表达质量，但不改变核心意思。</p>
+<h3 id="5-方案比较模板">5. 方案比较模板</h3>
+<pre><code class="language-text">我现在有几个选择：【选择 A】、【选择 B】、【选择 C】。
+请从成本、风险、执行难度、长期价值四个角度进行比较。
+最后给出推荐方案，并说明理由。</code></pre>
+<p>适合做决策前的辅助分析。</p>
+<h3 id="6-计划制定模板">6. 计划制定模板</h3>
+<pre><code class="language-text">我想在【时间范围】内完成【目标】。
+我的当前情况是：【说明基础、时间、资源、限制】。
+请帮我制定一个可执行计划。
+要求：
+1. 按阶段拆分；
+2. 每个阶段有具体任务；
+3. 标出优先级；
+4. 给出每天/每周可以执行的动作。</code></pre>
+<p>适合学习计划、健身计划、项目计划、考试准备。</p>
+<h3 id="例子-用模板制定一周工作计划">例子：用模板制定一周工作计划</h3>
+<p>你可以这样使用计划模板：</p>
+<pre><code class="language-text">我想在本周完成一份客户调研报告。
+我的当前情况是：已有 20 份问卷、3 份访谈记录，还没有整理结论。
+时间限制：周五下午提交。
+请帮我制定从周一到周五的执行计划，每天列出 3 到 5 个具体动作，并标出优先级。</code></pre>
+<p>AI 给出计划后，你可以继续要求它压缩任务、调整节奏，或者把每天任务改成待办清单。</p>
+<p>---</p>
+<h2 id="第-5-章-用-AI-处理文档-表格和资料">第 5 章：用 AI 处理文档、表格和资料</h2>
+<p>日常工作和学习中，很多时间都花在处理资料上。AI 可以帮助你更快理解内容、整理结构、发现重点。</p>
+<h3 id="1-处理长文档">1. 处理长文档</h3>
+<p>面对一份长文档，你可以先让 AI 做三件事：</p>
+<ul><li>总结核心内容；</li><li>提取关键结论；</li><li>找出你需要重点阅读的部分。</li></ul>
+<p>例如：</p>
+<pre><code class="language-text">请阅读下面这份资料，帮我提炼出主要观点、关键数据和可能的风险点。</code></pre>
+<p>这样做的好处是先建立整体认识，再回到原文精读。</p>
+<h3 id="2-整理会议记录">2. 整理会议记录</h3>
+<p>会议结束后，可以把记录交给 AI，让它整理成更清晰的结构。</p>
+<pre><code class="language-text">请把下面的会议记录整理成正式会议纪要，包含会议主题、讨论要点、决议事项、负责人和截止时间。</code></pre>
+<p>如果会议记录很乱，AI 可以帮你把碎片信息归类。但负责人、时间、决策结果这类关键内容一定要人工确认。</p>
+<h3 id="3-分析表格内容">3. 分析表格内容</h3>
+<p>如果你有销售数据、任务清单、预算明细等表格，可以让 AI 帮你找规律。</p>
+<pre><code class="language-text">请根据下面的表格数据，帮我找出明显趋势、异常值和可以进一步分析的问题。</code></pre>
+<p>需要注意的是，AI 对数据分析的准确性取决于你提供的数据质量。涉及金额、统计结论、业务决策时，最好再用表格软件或专业工具验证。</p>
+<h3 id="4-整理资料库">4. 整理资料库</h3>
+<p>当你收集了很多资料，可以让 AI 帮你分类。</p>
+<pre><code class="language-text">请把下面这些资料标题按主题分类，并为每一类起一个清晰的名称。</code></pre>
+<p>这适合做知识管理、项目调研、学习资料整理。</p>
+<h3 id="例子-整理一次客户会议资料">例子：整理一次客户会议资料</h3>
+<p>假设你刚参加完客户会议，手里有一段很乱的记录：</p>
+<pre><code class="language-text">客户说系统速度慢，尤其是月底导出报表。希望下个月能优化。还提到权限设置太复杂，新员工不会用。预算暂时不变，但希望我们先给优化方案。</code></pre>
+<p>可以让 AI 整理成：</p>
+<ul><li>客户反馈的问题；</li><li>客户希望的改进方向；</li><li>需要内部确认的事项；</li><li>下一步跟进动作；</li><li>可以写进会议纪要的正式表达。</li></ul>
+<p>这样你不需要从空白文档开始整理。</p>
+<p>---</p>
+<h2 id="第-6-章-用-AI-辅助学习新知识">第 6 章：用 AI 辅助学习新知识</h2>
+<p>AI 很适合做学习助手，尤其适合帮助普通人降低入门难度。</p>
+<h3 id="1-从零开始了解一个领域">1. 从零开始了解一个领域</h3>
+<p>当你接触一个新领域时，可以先让 AI 给你一张“地图”。</p>
+<pre><code class="language-text">我想了解【领域】，但我是零基础。请帮我用通俗语言介绍这个领域的基本概念、核心问题和学习路径。</code></pre>
+<p>这样你不会一开始就陷入细节，而是先知道这个领域大概由哪些部分组成。</p>
+<h3 id="2-让-AI-用不同方式解释">2. 让 AI 用不同方式解释</h3>
+<p>如果一个概念听不懂，不要急着放弃，可以让 AI 换一种讲法。</p>
+<pre><code class="language-text">我还是没理解，请用小学生也能听懂的方式解释，并举一个日常生活例子。</code></pre>
+<p>你也可以要求它用类比、故事、图表结构、问答形式来解释。</p>
+<h3 id="3-让-AI-帮你出题">3. 让 AI 帮你出题</h3>
+<p>学习不是只看解释，还要检查自己是否真的理解。</p>
+<pre><code class="language-text">请根据刚才的内容给我出 5 道测试题，题目由易到难。等我回答后，再帮我批改。</code></pre>
+<p>这种方式可以把 AI 变成一个陪练老师。</p>
+<h3 id="4-让-AI-帮你制定学习计划">4. 让 AI 帮你制定学习计划</h3>
+<p>如果你想系统学习某个技能，可以让 AI 按时间规划。</p>
+<pre><code class="language-text">我每天能学习 1 小时，希望 30 天入门【技能】。请帮我制定一个学习计划，每天安排具体任务。</code></pre>
+<p>计划不一定完美，但可以帮你开始行动。执行过程中，你还可以根据实际进度继续调整。</p>
+<h3 id="例子-用-AI-学一个新工具">例子：用 AI 学一个新工具</h3>
+<p>比如你想学习剪映，但不知道从哪里开始，可以这样问：</p>
+<pre><code class="language-text">我是剪映零基础，想学会剪一个 1 分钟的短视频。
+请帮我设计 7 天入门计划，每天只安排一个重点技能，并给我一个当天可以完成的小练习。</code></pre>
+<p>如果第 3 天发现自己卡在字幕功能上，可以继续说：</p>
+<pre><code class="language-text">我今天学字幕时不太理解自动字幕和手动字幕的区别，请用简单例子解释，并给我一个练习任务。</code></pre>
+<p>这样 AI 就从“一次性回答”变成了持续学习陪练。</p>
+<p>---</p>
+<h2 id="第-7-章-用-AI-辅助办公和项目管理">第 7 章：用 AI 辅助办公和项目管理</h2>
+<p>办公场景是 AI 最容易发挥作用的地方，因为很多工作都涉及文字、结构、沟通和计划。</p>
+<h3 id="1-写邮件和通知">1. 写邮件和通知</h3>
+<p>你可以先用简短语言说清楚意思，再让 AI 转成正式文本。</p>
+<pre><code class="language-text">请帮我写一封邮件，内容是提醒合作方在本周五前提交资料。语气礼貌、简洁，不要显得催促过重。</code></pre>
+<p>AI 能帮你节省措辞时间，尤其适合不确定语气是否合适的场景。</p>
+<h3 id="2-做汇报大纲">2. 做汇报大纲</h3>
+<p>准备汇报时，很多人容易把内容堆在一起。AI 可以帮你理清结构。</p>
+<pre><code class="language-text">我要做一次 10 分钟项目进展汇报。请帮我设计汇报结构，包含当前进展、问题风险、下一步计划。</code></pre>
+<p>你还可以让 AI 根据不同对象调整重点。给领导看，重点是结果和风险；给同事看，重点是协作和任务。</p>
+<h3 id="3-拆解任务">3. 拆解任务</h3>
+<p>面对一个大任务时，可以让 AI 帮你拆成步骤。</p>
+<pre><code class="language-text">请把“完成一场线下活动策划”拆解成可执行任务，并按准备阶段、执行阶段、复盘阶段分类。</code></pre>
+<p>任务拆解后，你更容易估算时间、分配责任和跟踪进度。</p>
+<h3 id="4-复盘工作">4. 复盘工作</h3>
+<p>项目结束后，可以用 AI 辅助复盘。</p>
+<pre><code class="language-text">请根据下面的项目过程，帮我整理一份复盘报告，包括做得好的地方、存在的问题、原因分析和改进建议。</code></pre>
+<p>复盘不是为了写漂亮文档，而是为了发现下一次可以改进的地方。</p>
+<h3 id="例子-生成一份项目周报">例子：生成一份项目周报</h3>
+<p>你可以先把本周零散工作写给 AI：</p>
+<pre><code class="language-text">本周完成了登录页调整、客户反馈整理、两次需求沟通。登录页还剩移动端适配没做完，客户反馈里有 3 个问题需要产品确认。下周重点是完成适配和推动问题确认。</code></pre>
+<p>然后要求：</p>
+<pre><code class="language-text">请整理成一份项目周报，包含本周完成、当前问题、下周计划，语气简洁，适合发给项目群。</code></pre>
+<p>AI 可以帮你把口语化记录变成清晰汇报，你再确认任务状态是否准确。</p>
+<p>---</p>
+<h2 id="第-8-章-用-AI-辅助写作和内容创作">第 8 章：用 AI 辅助写作和内容创作</h2>
+<p>写作是 AI 最常见的使用场景之一。但高效写作不是让 AI 一次性生成成品，而是让它参与选题、结构、初稿、修改和检查。</p>
+<h3 id="1-找选题">1. 找选题</h3>
+<p>如果你不知道写什么，可以让 AI 提供方向。</p>
+<pre><code class="language-text">我想写一篇面向普通职场人的 AI 使用文章，请给我 10 个选题，并说明每个选题适合解决什么问题。</code></pre>
+<p>选题阶段要重点看“是否有读者价值”，而不是只看标题是否吸引人。</p>
+<h3 id="2-搭结构">2. 搭结构</h3>
+<p>好的文章先有结构，再有内容。</p>
+<pre><code class="language-text">请帮我为这个选题设计文章大纲，要求逻辑递进，适合普通读者阅读。</code></pre>
+<p>结构清楚后，写作会轻松很多。</p>
+<h3 id="3-生成初稿">3. 生成初稿</h3>
+<p>AI 生成初稿可以帮助你摆脱空白页。</p>
+<pre><code class="language-text">请根据下面的大纲生成文章初稿，语言通俗，段落不要太长，每一章都要有具体例子。</code></pre>
+<p>初稿的作用是提供材料，不是直接发布。</p>
+<h3 id="4-修改风格">4. 修改风格</h3>
+<p>同一段文字，可以改成不同风格。</p>
+<pre><code class="language-text">请把这段文字改得更自然、更像公众号文章，但不要夸张，不要使用过多口号。</code></pre>
+<p>你也可以要求更正式、更口语、更简洁、更有逻辑。</p>
+<h3 id="5-检查问题">5. 检查问题</h3>
+<p>发布前，可以让 AI 做一次检查。</p>
+<pre><code class="language-text">请检查这篇文章是否有逻辑跳跃、重复表达、语气不统一或读者难以理解的地方，并给出修改建议。</code></pre>
+<p>这一步很有价值，因为 AI 可以充当临时编辑，帮你从读者角度审视内容。</p>
+<h3 id="例子-从选题到文章初稿">例子：从选题到文章初稿</h3>
+<p>假设你想写一篇关于“如何减少拖延”的文章，可以分三步让 AI 协助：</p>
+<pre><code class="language-text">第一步：请给我 5 个适合普通职场人的选题角度。
+第二步：我选择第 2 个角度，请帮我设计文章大纲。
+第三步：请根据这个大纲生成 1200 字初稿，每一部分都加入生活例子。</code></pre>
+<p>这样生成的内容会比直接说“写一篇拖延文章”更有层次，也更容易修改。</p>
+<p>---</p>
+<h2 id="第-9-章-用-AI-辅助编程和技术学习">第 9 章：用 AI 辅助编程和技术学习</h2>
+<p>即使你不是程序员，也可以用 AI 学习一些技术知识。对普通人来说，AI 最大的价值不是替你成为工程师，而是降低理解技术的门槛。</p>
+<h3 id="1-看懂代码">1. 看懂代码</h3>
+<p>如果你看到一段代码看不懂，可以让 AI 解释。</p>
+<pre><code class="language-text">请用通俗语言解释下面这段代码在做什么，每一部分分别有什么作用。</code></pre>
+<p>这适合学习编程、理解别人写的脚本、排查简单问题。</p>
+<h3 id="2-学习工具">2. 学习工具</h3>
+<p>很多工具说明文档比较难读，AI 可以帮你翻译成普通人能理解的步骤。</p>
+<pre><code class="language-text">请把下面这段工具说明改写成新手可以操作的步骤，每一步都说明目的。</code></pre>
+<h3 id="3-生成简单脚本">3. 生成简单脚本</h3>
+<p>如果你有重复性操作，可以让 AI 帮你生成脚本思路。但运行前一定要理解它会做什么。</p>
+<pre><code class="language-text">我有一批文件需要按日期重命名，请帮我写一个脚本，并解释每一行代码的作用。</code></pre>
+<p>对于删除文件、修改系统设置、处理重要数据的脚本，一定要谨慎验证，最好先在测试文件夹中运行。</p>
+<h3 id="4-排查错误">4. 排查错误</h3>
+<p>遇到报错时，可以把错误信息发给 AI。</p>
+<pre><code class="language-text">下面是我运行程序时出现的错误信息，请帮我分析可能原因，并给出排查步骤。</code></pre>
+<p>注意，不要只问“为什么报错”，要把上下文、操作步骤和完整错误信息一起提供。</p>
+<h3 id="例子-让-AI-看懂一个简单脚本">例子：让 AI 看懂一个简单脚本</h3>
+<p>如果同事发给你一段脚本，你不确定它是否安全，可以这样问：</p>
+<pre><code class="language-text">请解释下面这段脚本每一行在做什么。
+请特别标出它是否会删除文件、修改系统设置、上传数据或覆盖原文件。
+如果有风险，请告诉我应该如何先做测试。</code></pre>
+<p>这种问法比“这段代码安全吗”更具体，也更容易得到可操作的检查结果。</p>
+<p>---</p>
+<h2 id="第-10-章-常见误区与避坑建议">第 10 章：常见误区与避坑建议</h2>
+<p>学会使用 AI，不只是学会提示词，也要知道哪些地方不能盲目相信。</p>
+<h3 id="1-不要把-AI-当成绝对正确">1. 不要把 AI 当成绝对正确</h3>
+<p>AI 可能生成看似合理但实际错误的内容。尤其是数据、法律、医疗、金融、政策、考试答案等内容，一定要查证来源。</p>
+<p>比较稳妥的做法是：</p>
+<ul><li>让 AI 标出不确定之处；</li><li>要求 AI 给出验证方法；</li><li>关键结论回到原始资料确认。</li></ul>
+<h3 id="2-不要输入敏感信息">2. 不要输入敏感信息</h3>
+<p>使用 AI 时，不要随意输入身份证号、银行卡号、公司机密、客户隐私、未公开合同等敏感内容。</p>
+<p>如果必须处理类似材料，应该先脱敏，比如删除姓名、手机号、地址、合同金额等关键信息。</p>
+<h3 id="3-高风险任务先停一下">3. 高风险任务先停一下</h3>
+<p>医疗、法律、金融、税务、招聘录用、重大人事决定和安全操作等任务，AI 的内容只能作为线索或初稿。关键结论应回到法规、原始数据、专业人士或组织规定确认；不要把“AI 说可以”当作依据。</p>
+<h3 id="4-提交前的安全与事实检查">4. 提交前的安全与事实检查</h3>
+<ul><li>材料是否包含个人身份、账户、联系方式、内部数据或未公开合同？如有，删除、替换或改用获批准的工具；</li><li>结论中的数字、日期、引用和政策是否能回到原始来源核实？</li><li>是否把推测、示例或虚构案例误写成真实事实？</li><li>这份内容是否需要负责人、客户或专业人士最终确认？</li><li>当前工具是否允许联网、保存对话或用于此类数据？不确定时先查组织规定。</li></ul>
+<h3 id="5-不要只问一次">5. 不要只问一次</h3>
+<p>很多人问完一次觉得不好用，就放弃了。实际上，AI 更适合反复沟通。</p>
+<p>你可以继续追问：</p>
+<pre><code class="language-text">请再具体一点。</code></pre>
+<pre><code class="language-text">请换一种更适合新手的说法。</code></pre>
+<pre><code class="language-text">请按照我的场景重新调整。</code></pre>
+<p>好的结果通常是一步步打磨出来的。</p>
+<h3 id="6-不要让-AI-代替你的判断">6. 不要让 AI 代替你的判断</h3>
+<p>AI 可以提供建议，但最终判断仍然属于你。尤其是涉及人际关系、职业选择、投资决策、法律责任等问题时，AI 只能作为参考。</p>
+<h3 id="7-不要追求复杂提示词">7. 不要追求复杂提示词</h3>
+<p>提示词不是越长越好。真正重要的是把背景、目标、要求说清楚。很多时候，一个简单但具体的问题，比一段华丽复杂的提示词更有效。</p>
+<h3 id="例子-验证-AI-给出的建议">例子：验证 AI 给出的建议</h3>
+<p>假设 AI 告诉你“每天早上 5 点起床最有效率”，不要直接照做。你可以继续问：</p>
+<pre><code class="language-text">这个建议适合所有人吗？
+请列出它可能不适合哪些人，并给出更温和的替代方案。</code></pre>
+<p>AI 可能会补充：晚睡人群、带娃人群、夜班人群并不适合强行早起。这样你就能把一个绝对化建议，改成更适合自己的方案。</p>
+<h2 id="练习-完成一次可核查的小交付">练习：完成一次可核查的小交付</h2>
+<p>选择“把一段会议笔记整理成待办清单”这个任务，按照下面的闭环练习：</p>
+<ol><li>贴出已脱敏的会议笔记，并说明受众、截止时间和输出格式；</li><li>要求 AI 先列出它不确定的责任人、日期和决策；</li><li>让它生成待办清单，字段包含事项、负责人、截止时间、依据；</li><li>你逐项对照原笔记，补齐或更正不确定内容；</li><li>验收标准：无虚构事项；每项都有负责人或明确标注“待确认”；可直接发给参会者确认。</li></ol>
+<p>完成后，把这套指令与检查项保存下来。它就是你的第一份 AI 工作模板，也是阅读进阶篇的起点。</p>
+<p>---</p>
+<h2 id="结语-把-AI-变成日常习惯">结语：把 AI 变成日常习惯</h2>
+<p>高效使用 AI 的核心，不是记住多少提示词，也不是追逐最新工具，而是形成一种新的工作习惯：</p>
+<ul><li>遇到陌生知识，先让 AI 帮你建立框架；</li><li>遇到复杂任务，先让 AI 帮你拆解步骤；</li><li>遇到写作表达，先让 AI 帮你生成初稿；</li><li>遇到多个选择，先让 AI 帮你比较利弊；</li><li>得到结果后，再由你自己判断、修改和验证。</li></ul>
+<p>AI 最适合承担的是“辅助思考”和“加速执行”的角色。它能帮你更快开始、更快整理、更快比较、更快表达，但不能替你承担责任。</p>
+<p>真正会使用 AI 的人，不是完全依赖 AI 的人，而是知道如何提出好问题、如何检查回答、如何把 AI 的输出转化为自己成果的人。</p>
+<p>从今天开始，你不需要一下子掌握所有技巧。可以先从一个简单场景开始：让 AI 帮你总结一篇文章、润色一封邮件、制定一个计划，或者解释一个你不懂的概念。用得越多，你越能理解它的边界，也越能发挥它的价值。</p><div class="article-nav"><a href="普通人如何高效使用AI-进阶篇.html"><span>下一篇</span>进阶篇</a></div></article></main></div><script>window.__headings=[[1, "普通人如何高效使用 AI", "普通人如何高效使用-AI"], [2, "前言", "前言"], [2, "阅读导航", "阅读导航"], [2, "本文地图", "本文地图"], [2, "第 1 章：为什么现在每个人都应该学会使用 AI", "第-1-章-为什么现在每个人都应该学会使用-AI"], [3, "例子：下班前 30 分钟处理杂事", "例子-下班前-30-分钟处理杂事"], [2, "第 2 章：AI 工具的基本使用方式", "第-2-章-AI-工具的基本使用方式"], [3, "1. 提问", "1-提问"], [3, "2. 改写", "2-改写"], [3, "3. 总结", "3-总结"], [3, "4. 生成", "4-生成"], [3, "5. 追问", "5-追问"], [3, "例子：从一句话到可用邮件", "例子-从一句话到可用邮件"], [2, "第 3 章：提问的核心方法：角色、背景、目标、格式", "第-3-章-提问的核心方法-角色-背景-目标-格式"], [3, "先用这张任务说明卡", "先用这张任务说明卡"], [3, "1. 角色：希望 AI 以什么身份回答", "1-角色-希望-AI-以什么身份回答"], [3, "2. 背景：告诉 AI 当前情况", "2-背景-告诉-AI-当前情况"], [3, "3. 目标：明确你想得到什么结果", "3-目标-明确你想得到什么结果"], [3, "4. 格式：告诉 AI 如何输出", "4-格式-告诉-AI-如何输出"], [3, "5. 一个完整示例", "5-一个完整示例"], [3, "例子：把模糊需求改成清晰提示词", "例子-把模糊需求改成清晰提示词"], [3, "输出前的 60 秒验收", "输出前的-60-秒验收"], [2, "第 4 章：常用提示词模板", "第-4-章-常用提示词模板"], [3, "模板怎么用才不会变成“复制即交付”", "模板怎么用才不会变成-复制即交付"], [3, "1. 学习解释模板", "1-学习解释模板"], [3, "2. 总结提炼模板", "2-总结提炼模板"], [3, "3. 写作初稿模板", "3-写作初稿模板"], [3, "4. 修改润色模板", "4-修改润色模板"], [3, "5. 方案比较模板", "5-方案比较模板"], [3, "6. 计划制定模板", "6-计划制定模板"], [3, "例子：用模板制定一周工作计划", "例子-用模板制定一周工作计划"], [2, "第 5 章：用 AI 处理文档、表格和资料", "第-5-章-用-AI-处理文档-表格和资料"], [3, "1. 处理长文档", "1-处理长文档"], [3, "2. 整理会议记录", "2-整理会议记录"], [3, "3. 分析表格内容", "3-分析表格内容"], [3, "4. 整理资料库", "4-整理资料库"], [3, "例子：整理一次客户会议资料", "例子-整理一次客户会议资料"], [2, "第 6 章：用 AI 辅助学习新知识", "第-6-章-用-AI-辅助学习新知识"], [3, "1. 从零开始了解一个领域", "1-从零开始了解一个领域"], [3, "2. 让 AI 用不同方式解释", "2-让-AI-用不同方式解释"], [3, "3. 让 AI 帮你出题", "3-让-AI-帮你出题"], [3, "4. 让 AI 帮你制定学习计划", "4-让-AI-帮你制定学习计划"], [3, "例子：用 AI 学一个新工具", "例子-用-AI-学一个新工具"], [2, "第 7 章：用 AI 辅助办公和项目管理", "第-7-章-用-AI-辅助办公和项目管理"], [3, "1. 写邮件和通知", "1-写邮件和通知"], [3, "2. 做汇报大纲", "2-做汇报大纲"], [3, "3. 拆解任务", "3-拆解任务"], [3, "4. 复盘工作", "4-复盘工作"], [3, "例子：生成一份项目周报", "例子-生成一份项目周报"], [2, "第 8 章：用 AI 辅助写作和内容创作", "第-8-章-用-AI-辅助写作和内容创作"], [3, "1. 找选题", "1-找选题"], [3, "2. 搭结构", "2-搭结构"], [3, "3. 生成初稿", "3-生成初稿"], [3, "4. 修改风格", "4-修改风格"], [3, "5. 检查问题", "5-检查问题"], [3, "例子：从选题到文章初稿", "例子-从选题到文章初稿"], [2, "第 9 章：用 AI 辅助编程和技术学习", "第-9-章-用-AI-辅助编程和技术学习"], [3, "1. 看懂代码", "1-看懂代码"], [3, "2. 学习工具", "2-学习工具"], [3, "3. 生成简单脚本", "3-生成简单脚本"], [3, "4. 排查错误", "4-排查错误"], [3, "例子：让 AI 看懂一个简单脚本", "例子-让-AI-看懂一个简单脚本"], [2, "第 10 章：常见误区与避坑建议", "第-10-章-常见误区与避坑建议"], [3, "1. 不要把 AI 当成绝对正确", "1-不要把-AI-当成绝对正确"], [3, "2. 不要输入敏感信息", "2-不要输入敏感信息"], [3, "3. 高风险任务先停一下", "3-高风险任务先停一下"], [3, "4. 提交前的安全与事实检查", "4-提交前的安全与事实检查"], [3, "5. 不要只问一次", "5-不要只问一次"], [3, "6. 不要让 AI 代替你的判断", "6-不要让-AI-代替你的判断"], [3, "7. 不要追求复杂提示词", "7-不要追求复杂提示词"], [3, "例子：验证 AI 给出的建议", "例子-验证-AI-给出的建议"], [2, "练习：完成一次可核查的小交付", "练习-完成一次可核查的小交付"], [2, "结语：把 AI 变成日常习惯", "结语-把-AI-变成日常习惯"]];</script>
+<script>
+(()=>{const root=document.documentElement,key='ai-learning-theme',buttons=[...document.querySelectorAll('[data-theme-choice]')];function setTheme(value){root.dataset.theme=value;localStorage.setItem(key,value);buttons.forEach(b=>b.classList.toggle('active',b.dataset.themeChoice===value));}setTheme(localStorage.getItem(key)||'system');buttons.forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.themeChoice)));
+const bar=document.querySelector('#progressBar');if(bar)addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max?scrollY/max*100:0)+'%';},{passive:true});
+const toc=document.querySelector('.toc'),toggle=document.querySelector('#tocToggle');if(toggle&&toc)toggle.addEventListener('click',()=>toc.classList.toggle('open'));
+const nav=document.querySelector('#tocNav'),headings=window.__headings||[];if(nav){nav.innerHTML='<h2>目录</h2>'+headings.filter(h=>h[0]>1).map(h=>`<a data-level="${h[0]}" href="#${h[2]}">${h[1]}</a>`).join('');const links=[...nav.querySelectorAll('a')],elements=headings.map(h=>document.getElementById(h[2])).filter(Boolean);new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)[0];if(visible){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+visible.target.id));}},{rootMargin:'-15% 0px -75% 0px'}).observe;elements.forEach(element=>new IntersectionObserver(entries=>{if(entries[0].isIntersecting){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+element.id));}},{rootMargin:'-15% 0px -75% 0px'}).observe(element));}
+})();
+</script>
+</body></html>
